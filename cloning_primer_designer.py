@@ -87,7 +87,7 @@ def check_3p_cutter(enzyme_5p):
             print(enzyme_3p + " chosen as 5' cutter.")
             return (enzyme_3p, cut_site)
 
-cds_file = open("C:\\path\\to\\your\\restriction_enzymes.json","r") 
+cds_file = open("C:\\path\\to\\your\\restriction_enzymes.json","r") #CHANGE THIS FOR YOUR PATH
 coding_sequence = cds_file.read()
 coding_sequence.upper()
 
@@ -104,7 +104,7 @@ else:
     pass
 
 restriction_enzymes = []
-with open("C:\\path\\to\\your\\restriction_enzymes.json", "r") as jsonfile:
+with open("C:\\path\\to\\your\\restriction_enzymes.json", "r") as jsonfile: #CHANGE THIS FOR YOUR PATH
     enzyme_data = json.load(jsonfile)
     for entry in enzyme_data:
         restriction_enzymes.append(entry)
