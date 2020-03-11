@@ -2,13 +2,9 @@ import math as maths
 import json
 import os
 
-#DO NOT HAVE 3 of more G or C bases at 3' end
-#DO NOT HAVE a 3' thymidine, since it is more prone to mispriming than the other nucleotides.
-#Optimal length = 18-30BP
-#Melting Temp Over 60C
-#Melting Temp within 4C for each primer
-#GC content between 40 and 60%
-#coding_sequence = input("Paste the entire coding sequence for your gene of interest into the console. Do not include introns, this is a CDS: ")
+#This tool requires that you run this python script in the same path as the restriction enzyme json file and a .txt file containing
+#The CDS of the gene you would like to clone. This is meant for eukaryotic genes.
+#Work in progress 3_11_2020
 
 def check_start(coding_sequence):
     if coding_sequence[0:3].strip() == "ATG":
@@ -114,5 +110,10 @@ fiveprimecutter = check_5p_cutter()
 threeprimecutter = check_3p_cutter(fiveprimecutter[0])
 
 
-
-
+#notes for primers
+#DO NOT HAVE 3 of more G or C bases at 3' end
+#DO NOT HAVE a 3' thymidine, since it is more prone to mispriming than the other nucleotides.
+#Optimal length = 18-30BP
+#Melting Temp Over 60C
+#Melting Temp within 4C for each primer
+#GC content between 40 and 60%
