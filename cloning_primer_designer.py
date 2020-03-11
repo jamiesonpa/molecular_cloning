@@ -4,6 +4,9 @@ import os
 
 #This tool requires that you run this python script in the same path as the restriction enzyme json file and a .txt file containing
 #The CDS of the gene you would like to clone. This is meant for eukaryotic genes.
+
+#NOTE: Change the path strings below!
+
 #Work in progress 3_11_2020
 
 def check_start(coding_sequence):
@@ -84,7 +87,7 @@ def check_3p_cutter(enzyme_5p):
             print(enzyme_3p + " chosen as 5' cutter.")
             return (enzyme_3p, cut_site)
 
-cds_file = open("C:\\Users\\HPLC Admin\\Desktop\\SpectralAnalysis\\Primer_Generator\\cds.txt","r") 
+cds_file = open("C:\\path\\to\\your\\restriction_enzymes.json","r") 
 coding_sequence = cds_file.read()
 coding_sequence.upper()
 
@@ -101,7 +104,7 @@ else:
     pass
 
 restriction_enzymes = []
-with open("C:\\Users\\HPLC Admin\\Desktop\\SpectralAnalysis\\Primer_Generator\\restriction_enzymes.json", "r") as jsonfile:
+with open("C:\\path\\to\\your\\restriction_enzymes.json", "r") as jsonfile:
     enzyme_data = json.load(jsonfile)
     for entry in enzyme_data:
         restriction_enzymes.append(entry)
